@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#201a1b" />
+    <meta name="description" content="一款練習古董低買高賣的單機像素風經營遊戲原型。" />
+    <title>古董小店：低買高賣</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="game-shell" aria-label="古董小店遊戲">
+      <div id="game-container"></div>
+      <p class="loading-note">若遊戲沒有載入，請確認網路可連線至 Phaser CDN，並使用本機 HTTP 伺服器開啟。</p>
+    </main>
+
+    <!-- Phaser 版本固定，避免 CDN 上游更新造成未預期變更。 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/3.86.0/phaser.min.js" crossorigin="anonymous"></script>
+    <script src="src/config.js"></script>
+    <script src="src/game/market.js"></script>
+    <script src="src/game/bargaining.js"></script>
+    <script src="src/storage/saveManager.js"></script>
+    <script src="src/game/inventory.js"></script>
+    <script src="src/game/initialState.js"></script>
+    <script src="src/game/economy.js"></script>
+    <script src="src/scenes/BootScene.js"></script>
+    <script src="src/scenes/TitleScene.js"></script>
+    <script src="src/scenes/ShopScene.js"></script>
+    <script src="src/main.js"></script>
+  </body>
+</html>
+
+

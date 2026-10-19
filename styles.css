@@ -1,0 +1,74 @@
+:root {
+  color-scheme: dark;
+  font-family: "Microsoft JhengHei", "Noto Sans TC", system-ui, sans-serif;
+  background: #201a1b;
+  color: #fff3d6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  background: #201a1b;
+}
+
+body {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right))
+    max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+}
+
+#game-shell {
+  width: min(100%, 1100px);
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+#game-container {
+  width: 100%;
+  height: min(78svh, 720px);
+  min-height: 420px;
+  overflow: hidden;
+  border: 4px solid #d9a441;
+  border-radius: 8px;
+  background: #33272a;
+  box-shadow: 0 12px 40px #0008;
+  touch-action: manipulation;
+}
+
+#game-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  touch-action: manipulation;
+}
+
+.loading-note {
+  max-width: 70ch;
+  margin: 0;
+  color: #c8b99f;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  body { padding: max(8px, env(safe-area-inset-top)) 8px max(8px, env(safe-area-inset-bottom)); }
+  #game-container { height: min(82svh, 720px); min-height: 360px; border-width: 3px; }
+  .loading-note { font-size: 11px; }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  body { padding: 8px; }
+  #game-container { height: calc(100svh - 16px); min-height: 0; }
+  .loading-note { display: none; }
+}
